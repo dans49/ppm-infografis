@@ -238,5 +238,25 @@ include "config/koneksi.php";
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const map = L.map('map').setView([-7.55, 108.10], 9.5);
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors',
+            maxZoom: 19
+        }).addTo(map);
+
+        L.marker([-7.35, 108.11])
+            .addTo(map)
+            .bindPopup('<b>Kabupaten Tasikmalaya</b>');
+
+        setTimeout(function () {
+            map.invalidateSize();
+        }, 200);
+    });
+    </script>
 </body>
 </html>
