@@ -52,9 +52,9 @@ include "config/koneksi.php";
                             <i class="fa-solid fa-map-location-dot"></i> Peta & Sebaran
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-map"></i> Sebaran Kecamatan</a></li>
+                            <li><a class="dropdown-item" href="https://giskesehatan.lamputrafficlight.com/" target="_blank"><i class="fa-solid fa-map"></i> Sebaran Kecamatan</a></li>
                             <li><a class="dropdown-item" href="#"><i class="fa-solid fa-location-dot"></i> Sebaran Desa</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-layer-group"></i> Peta Tematik</a></li>
+                            <li><a class="dropdown-item" href="https://giskesehatan.lamputrafficlight.com/" target="_blank"><i class="fa-solid fa-layer-group"></i> Peta Tematik</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -94,16 +94,16 @@ include "config/koneksi.php";
                 <p>Informasi tingkat kemiskinan dan capaian penanggulangan</p>
                 <button type="button">Lihat Selengkapnya <i class="fa-solid fa-arrow-right"></i></button>
             </div>
-            <div class="category-card purple" data-page="gender">
-                <div class="category-icon"><i class="fa-solid fa-venus-mars"></i></div>
-                <h3>GENDER</h3>
-                <p>Data dan indikator kesetaraan gender dan pemberdayaan</p>
-                <button type="button">Lihat Selengkapnya <i class="fa-solid fa-arrow-right"></i></button>
-            </div>
             <div class="category-card pink" data-page="stunting">
                 <div class="category-icon"><i class="fa-solid fa-child-reaching"></i></div>
                 <h3>STUNTING</h3>
                 <p>Capaian dan sebaran stunting di setiap wilayah</p>
+                <button type="button">Lihat Selengkapnya <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+            <div class="category-card purple" data-page="gender">
+                <div class="category-icon"><i class="fa-solid fa-venus-mars"></i></div>
+                <h3>GENDER</h3>
+                <p>Data dan indikator kesetaraan gender dan pemberdayaan</p>
                 <button type="button">Lihat Selengkapnya <i class="fa-solid fa-arrow-right"></i></button>
             </div>
             <div class="category-card cyan" data-page="idm">
