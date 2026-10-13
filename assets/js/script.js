@@ -36,7 +36,7 @@ const categoryData={
         label:'Angka Partisipasi Sekolah',
         status:'Baik',
         chart:'Tren Angka Partisipasi Sekolah (%)',
-        indicators:['Ringkasan','Pendidikan Dasar','Pendidikan Menengah','Angka Partisipasi','Angka Putus Sekolah','Tenaga Pendidikan','Sarana Pendidikan']
+        indicators:['Ringkasan','Pendidikan Dasar','Pendidikan Menengah','Angka Partisipasi','Angka Putus Sekolah','Tenaga Pendidikan','Sarana Pendidikan','HLS','RLS']
     },
     kemiskinan:{
         title:'PROFIL KEMISKINAN KABUPATEN TASIKMALAYA',

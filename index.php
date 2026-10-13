@@ -34,12 +34,17 @@ include "config/koneksi.php";
                             <i class="fa-solid fa-chart-column"></i> Data & Indikator
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-heart-pulse"></i> Kesehatan</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-graduation-cap"></i> Pendidikan</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-people-group"></i> Kemiskinan</a></li>
+                            <?php
+                            $listka = mysqli_query($conn,"SELECT * FROM ppm_kategori");
+                            while ($view = mysqli_fetch_array($listka)) { ?>
+
+                                <li><a class="dropdown-item" href="?kategori=<?=$view['slug'] ?>"><i class="fa-solid <?=$view['icon'] ?>"></i> <?=$view['kategori'] ?></a></li>
+                            <?php
+                            }
+                            ?>
+                            <!-- 
                             <li><a class="dropdown-item" href="#"><i class="fa-solid fa-venus-mars"></i> Gender</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-child-reaching"></i> Stunting</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-chart-column"></i> IDM</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-chart-column"></i> IDM</a></li> -->
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -63,6 +68,8 @@ include "config/koneksi.php";
         </div>
     </nav>
 
+    <?php
+    if(empty($_GET['page']) && empty($_GET['kategori'])){ ?>
     <section class="hero">
         <div class="hero-content">
             <h1>SATU DATA BIDANG PPM BAPPELITBANGDA<br>KABUPATEN TASIKMALAYA</h1>
@@ -107,6 +114,7 @@ include "config/koneksi.php";
             </div>
         </div>
     </section>
+    <?php } ?>
 
     <section class="dashboard">
         <div class="dashboard-title">
