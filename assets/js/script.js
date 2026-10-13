@@ -3,10 +3,8 @@ const dashboardTitle=document.getElementById('dashboard-title');
 const sidebarHeader=document.getElementById('sidebar-header');
 const sidebarList=document.getElementById('sidebar-list');
 const mapTitle=document.getElementById('map-title');
-const regionName=document.getElementById('region-name');
-const population=document.getElementById('population');
-const facility=document.getElementById('facility');
-const indicatorValue=document.getElementById('indicator-value');
+const levelwil=document.getElementById('levelwil');
+const indikator=document.getElementById('indicator');
 const mainValue=document.getElementById('main-value');
 const mainLabel=document.getElementById('main-label');
 const statusValue=document.getElementById('status-value');
@@ -16,12 +14,9 @@ const categoryData={
         title:'PROFIL KESEHATAN KABUPATEN TASIKMALAYA',
         sidebar:'PROFIL KESEHATAN',
         map:'PETA INDIKATOR KESEHATAN',
-        region:'Singaparna',
-        population:'29.602 jiwa',
-        facility:'1 unit',
-        value:'87,4%',
-        label:'Cakupan Imunisasi Lengkap',
-        status:'Sedang',
+        levelwil:'Kabupaten',
+        indikator:'Angka Harapan Hidup',
+        value: '70 Tahun',
         chart:'Tren Cakupan Imunisasi Lengkap (%)',
         indicators:['Ringkasan','Kesehatan Ibu & Anak','Penyakit Menular','Penyakit Tidak Menular','Kesehatan Lingkungan','Fasilitas & SDM Kesehatan','Jaminan Kesehatan']
     },
@@ -29,12 +24,9 @@ const categoryData={
         title:'PROFIL PENDIDIKAN KABUPATEN TASIKMALAYA',
         sidebar:'PROFIL PENDIDIKAN',
         map:'PETA INDIKATOR PENDIDIKAN',
-        region:'Singaparna',
-        population:'29.602 jiwa',
-        facility:'32 sekolah',
-        value:'91,2%',
-        label:'Angka Partisipasi Sekolah',
-        status:'Baik',
+        levelwil:'Kabupaten',
+        indikator:'Harapan Lama Sekolah',
+        value: '80%',
         chart:'Tren Angka Partisipasi Sekolah (%)',
         indicators:['Ringkasan','Pendidikan Dasar','Pendidikan Menengah','Angka Partisipasi','Angka Putus Sekolah','Tenaga Pendidikan','Sarana Pendidikan','HLS','RLS']
     },
@@ -42,12 +34,9 @@ const categoryData={
         title:'PROFIL KEMISKINAN KABUPATEN TASIKMALAYA',
         sidebar:'KEMISKINAN',
         map:'PETA INDIKATOR KEMISKINAN',
-        region:'Singaparna',
-        population:'29.602 jiwa',
-        facility:'8.421 KK',
-        value:'8,7%',
-        label:'Persentase Penduduk Miskin',
-        status:'Sedang',
+        levelwil:'Kabupaten',
+        indikator:'Persentase Kemiskinan',
+        value: '10,15%',
         chart:'Tren Persentase Penduduk Miskin (%)',
         indicators:['Ringkasan','Kemiskinan','Penduduk Miskin','P3KE','Bantuan Sosial','Kondisi Rumah Tangga','Ketenagakerjaan']
     },
@@ -55,12 +44,9 @@ const categoryData={
         title:'PROFIL GENDER KABUPATEN TASIKMALAYA',
         sidebar:'GENDER',
         map:'PETA INDIKATOR GENDER',
-        region:'Singaparna',
-        population:'29.602 jiwa',
-        facility:'—',
-        value:'89,6',
-        label:'Indeks Pembangunan Gender',
-        status:'Baik',
+        levelwil:'Kabupaten',
+        indikator:'Angka Harapan Hidup',
+        value: '90%',
         chart:'Tren Indeks Pembangunan Gender',
         indicators:['Ringkasan','Indeks Pembangunan Gender','Indeks Pemberdayaan Gender','Perlindungan Perempuan']
     },
@@ -68,12 +54,9 @@ const categoryData={
         title:'PROFIL STUNTING KABUPATEN TASIKMALAYA',
         sidebar:'STUNTING',
         map:'PETA INDIKATOR STUNTING',
-        region:'Singaparna',
-        population:'29.602 jiwa',
-        facility:'52 Posyandu',
-        value:'12,4%',
-        label:'Prevalensi Stunting',
-        status:'Rendah',
+        levelwil:'Kabupaten',
+        indikator:'Prevalensi Stunting',
+        value: '17,1%',
         chart:'Tren Prevalensi Stunting (%)',
         indicators:['Ringkasan','Prevalensi Stunting','Balita','Kesehatan Ibu','Intervensi Spesifik','Intervensi Sensitif']
     },
@@ -81,12 +64,9 @@ const categoryData={
         title:'INDEKS DESA MEMBANGUN KABUPATEN TASIKMALAYA',
         sidebar:'IDM',
         map:'PETA INDEKS DESA MEMBANGUN',
-        region:'Singaparna',
-        population:'29.602 jiwa',
-        facility:'—',
-        value:'0,76',
-        label:'Indeks Desa Membangun',
-        status:'Maju',
+        levelwil:'Kabupaten',
+        indikator:'Angka Harapan Hidup',
+        value: '90%',
         chart:'Tren Indeks Desa Membangun',
         indicators:['Ringkasan','Indeks Desa Membangun','Indeks Ketahanan Sosial','Indeks Ketahanan Ekonomi','Indeks Ketahanan Lingkungan','Status Desa']
     }
@@ -98,13 +78,9 @@ function updateDashboard(page){
     dashboardTitle.textContent=data.title;
     sidebarHeader.innerHTML=data.sidebar;
     mapTitle.textContent=data.map;
-    regionName.textContent=data.region;
-    population.textContent=data.population;
-    facility.textContent=data.facility;
-    indicatorValue.textContent=data.value;
+    levelwil.textContent=data.levelwil;
+    indikator.textContent=data.indikator;
     mainValue.textContent=data.value;
-    mainLabel.textContent=data.label;
-    statusValue.textContent=data.status;
     sidebarList.innerHTML=data.indicators.map((item,index)=>`<li class="${index===0?'active':''}">${item}</li>`).join('');
     bindSidebar();
 }

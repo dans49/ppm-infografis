@@ -159,7 +159,7 @@ include "config/koneksi.php";
                 <div class="map-placeholder">AREA PETA KABUPATEN TASIKMALAYA</div>
             </div>
 
-            <div class="info-column">
+            <!-- <div class="info-column">
                 <div class="info-panel">
                     <h3>INFORMASI WILAYAH TERPILIH</h3>
                     <h3 id="region-name">Singaparna</h3>
@@ -181,6 +181,27 @@ include "config/koneksi.php";
                     <p style="font-size:11px;" id="main-label">Cakupan Imunisasi Lengkap</p>
                     <p style="font-size:11px;margin:10px 0;">Status: <span class="status" id="status-value">Sedang</span></p>
                     <button class="detail-btn" type="button">Lihat Detail Wilayah →</button>
+                </div>
+            </div> -->
+            <div class="info-column">
+                <div class="info-panel">
+                    <h3>INFORMASI</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span>Level</span>
+                            <strong id="levelwil">Kabupaten</strong>
+                        </div>
+                        <!-- <div class="info-item">
+                            <span>Penduduk</span>
+                            <strong id="population">29.602 jiwa</strong>
+                        </div> -->
+                        <div class="info-item">
+                            <span>Indikator</span>
+                            <strong id="indicator">Angka Harapan Hidup</strong>
+                        </div>
+                    </div>
+                    <div class="big-number" id="main-value">87,4%</div>
+                    <!-- <p style="font-size:11px;margin:10px 0;">Status: <span class="status" id="status-value">Sedang</span></p> -->
                 </div>
             </div>
         </div>
