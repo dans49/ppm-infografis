@@ -8,6 +8,7 @@ const indikator=document.getElementById('indicator');
 const mainValue=document.getElementById('main-value');
 const mainLabel=document.getElementById('main-label');
 const statusValue=document.getElementById('status-value');
+const dataTahun=document.getElementById('data-tahun');
 
 const categoryData={
     kesehatan:{
@@ -16,7 +17,8 @@ const categoryData={
         map:'PETA INDIKATOR KESEHATAN',
         levelwil:'Kabupaten',
         indikator:'Angka Harapan Hidup',
-        value: '70 Tahun',
+        value: '70,39 Tahun',
+        datatahun: '2024',
         chart:'Tren Cakupan Imunisasi Lengkap (%)',
         indicators:['Ringkasan','Kesehatan Ibu & Anak','Penyakit Menular','Penyakit Tidak Menular','Kesehatan Lingkungan','Fasilitas & SDM Kesehatan','Jaminan Kesehatan']
     },
@@ -26,9 +28,10 @@ const categoryData={
         map:'PETA INDIKATOR PENDIDIKAN',
         levelwil:'Kabupaten',
         indikator:'Harapan Lama Sekolah',
-        value: '80%',
+        value: '12,92 Tahun',
+        datatahun: '2025',
         chart:'Tren Angka Partisipasi Sekolah (%)',
-        indicators:['Ringkasan','Pendidikan Dasar','Pendidikan Menengah','Angka Partisipasi','Angka Putus Sekolah','Tenaga Pendidikan','Sarana Pendidikan','HLS','RLS']
+        indicators:['Ringkasan','Pendidikan Dasar','Harapan Lama Sekolah','Rata-rata Lama Sekolah','Angka Partisipasi','Angka Putus Sekolah','Tenaga Pendidikan','Sarana Pendidikan']
     },
     kemiskinan:{
         title:'PROFIL KEMISKINAN KABUPATEN TASIKMALAYA',
@@ -37,18 +40,9 @@ const categoryData={
         levelwil:'Kabupaten',
         indikator:'Persentase Kemiskinan',
         value: '10,15%',
+        datatahun: '2025',
         chart:'Tren Persentase Penduduk Miskin (%)',
         indicators:['Ringkasan','Kemiskinan','Penduduk Miskin','P3KE','Bantuan Sosial','Kondisi Rumah Tangga','Ketenagakerjaan']
-    },
-    gender:{
-        title:'PROFIL GENDER KABUPATEN TASIKMALAYA',
-        sidebar:'GENDER',
-        map:'PETA INDIKATOR GENDER',
-        levelwil:'Kabupaten',
-        indikator:'Angka Harapan Hidup',
-        value: '90%',
-        chart:'Tren Indeks Pembangunan Gender',
-        indicators:['Ringkasan','Indeks Pembangunan Gender','Indeks Pemberdayaan Gender','Perlindungan Perempuan']
     },
     stunting:{
         title:'PROFIL STUNTING KABUPATEN TASIKMALAYA',
@@ -57,16 +51,29 @@ const categoryData={
         levelwil:'Kabupaten',
         indikator:'Prevalensi Stunting',
         value: '17,1%',
+        datatahun: '2025',
         chart:'Tren Prevalensi Stunting (%)',
         indicators:['Ringkasan','Prevalensi Stunting','Balita','Kesehatan Ibu','Intervensi Spesifik','Intervensi Sensitif']
+    },
+    gender:{
+        title:'PROFIL GENDER KABUPATEN TASIKMALAYA',
+        sidebar:'GENDER',
+        map:'PETA INDIKATOR GENDER',
+        levelwil:'Kabupaten',
+        indikator:'-',
+        value: '-',
+        datatahun: '-',
+        chart:'Tren Indeks Pembangunan Gender',
+        indicators:['Ringkasan','Indeks Pembangunan Gender','Indeks Pemberdayaan Gender','Perlindungan Perempuan']
     },
     idm:{
         title:'INDEKS DESA MEMBANGUN KABUPATEN TASIKMALAYA',
         sidebar:'IDM',
         map:'PETA INDEKS DESA MEMBANGUN',
         levelwil:'Kabupaten',
-        indikator:'Angka Harapan Hidup',
-        value: '90%',
+        indikator:'-',
+        value: '-',
+        datatahun: '-',
         chart:'Tren Indeks Desa Membangun',
         indicators:['Ringkasan','Indeks Desa Membangun','Indeks Ketahanan Sosial','Indeks Ketahanan Ekonomi','Indeks Ketahanan Lingkungan','Status Desa']
     }
@@ -81,6 +88,7 @@ function updateDashboard(page){
     levelwil.textContent=data.levelwil;
     indikator.textContent=data.indikator;
     mainValue.textContent=data.value;
+    dataTahun.textContent=data.datatahun;
     sidebarList.innerHTML=data.indicators.map((item,index)=>`<li class="${index===0?'active':''}">${item}</li>`).join('');
     bindSidebar();
 }

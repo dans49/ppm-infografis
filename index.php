@@ -11,6 +11,7 @@ include "config/koneksi.php";
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg " style="background-color: #e3f2fd;">
@@ -100,12 +101,12 @@ include "config/koneksi.php";
                 <p>Capaian dan sebaran stunting di setiap wilayah</p>
                 <button type="button">Lihat Selengkapnya <i class="fa-solid fa-arrow-right"></i></button>
             </div>
-            <div class="category-card purple" data-page="gender">
+            <!-- <div class="category-card purple" data-page="gender">
                 <div class="category-icon"><i class="fa-solid fa-venus-mars"></i></div>
                 <h3>GENDER</h3>
                 <p>Data dan indikator kesetaraan gender dan pemberdayaan</p>
                 <button type="button">Lihat Selengkapnya <i class="fa-solid fa-arrow-right"></i></button>
-            </div>
+            </div> -->
             <div class="category-card cyan" data-page="idm">
                 <div class="category-icon"><i class="fa-solid fa-chart-column"></i></div>
                 <h3>IDM</h3>
@@ -156,7 +157,7 @@ include "config/koneksi.php";
 
             <div class="map-area">
                 <div class="map-header" id="map-title">PETA INDIKATOR KESEHATAN</div>
-                <div class="map-placeholder">AREA PETA KABUPATEN TASIKMALAYA</div>
+                <div id="map"></div>
             </div>
 
             <!-- <div class="info-column">
@@ -191,16 +192,16 @@ include "config/koneksi.php";
                             <span>Level</span>
                             <strong id="levelwil">Kabupaten</strong>
                         </div>
-                        <!-- <div class="info-item">
-                            <span>Penduduk</span>
-                            <strong id="population">29.602 jiwa</strong>
-                        </div> -->
+                        <div class="info-item">
+                            <span>Tahun Data</span>
+                            <strong id="data-tahun">2024</strong>
+                        </div>
                         <div class="info-item">
                             <span>Indikator</span>
-                            <strong id="indicator">Angka Harapan Hidup</strong>
                         </div>
                     </div>
-                    <div class="big-number" id="main-value">87,4%</div>
+                    <strong id="indicator">Angka Harapan Hidup</strong>
+                    <div class="big-number" id="main-value">70,39 Tahun</div>
                     <!-- <p style="font-size:11px;margin:10px 0;">Status: <span class="status" id="status-value">Sedang</span></p> -->
                 </div>
             </div>

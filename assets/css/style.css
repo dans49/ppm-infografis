@@ -347,6 +347,12 @@ body {
     gap: 15px;
 }
 
+.info-grid .indikator {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr; */
+    gap: 15px;
+}
+
 .info-item span {
     display: block;
     font-size: 10px;
