@@ -145,7 +145,7 @@ include "config/koneksi.php";
             <aside class="sidebar">
                 <div class="sidebar-header" id="sidebar-header">PROFIL KESEHATAN</div>
                 <ul id="sidebar-list">
-                    <li class="active">Ringkasan</li>
+                    <li class="active">Angka Harapan Hidup</li>
                     <li>Kesehatan Ibu & Anak</li>
                     <li>Penyakit Menular</li>
                     <li>Penyakit Tidak Menular</li>
@@ -250,13 +250,25 @@ include "config/koneksi.php";
         const map = L.map('map').setView([-7.55, 108.10], 9.5);
 
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; OpenStreetMap contributors',
-            maxZoom: 19
+            attribution: '&copy; OpenStreetMap contributors', maxZoom: 19
         }).addTo(map);
 
-        L.marker([-7.35, 108.11])
-            .addTo(map)
-            .bindPopup('<b>Kabupaten Tasikmalaya</b>');
+        L.marker([-7.35, 108.11]).addTo(map).bindPopup('<b>Kabupaten Tasikmalaya</b>');
+
+        var layerWilayah = L.layerGroup().addTo(map);
+
+        fetch('assets/gis/32.06_kecamatan.geojson')
+        .then(response => response.json())
+        .then(data => {
+            L.geoJSON(data, {
+            onEachFeature: function (feature, layer) {
+                const namaKec = feature.properties.nm_kecamatan.toUpperCase();
+                if (feature.properties && feature.properties.nm_kecamatan) {
+                layer.bindPopup(namaKec); // Menampilkan popup saat diklik
+                }
+            }
+            }).addTo(map);
+        })
 
         setTimeout(function () {
             map.invalidateSize();

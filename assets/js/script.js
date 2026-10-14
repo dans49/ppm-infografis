@@ -20,7 +20,7 @@ const categoryData={
         value: '70,39 Tahun',
         datatahun: '2024',
         chart:'Tren Cakupan Imunisasi Lengkap (%)',
-        indicators:['Ringkasan','Kesehatan Ibu & Anak','Penyakit Menular','Penyakit Tidak Menular','Kesehatan Lingkungan','Fasilitas & SDM Kesehatan','Jaminan Kesehatan']
+        indicators:['Angka Harapan Hidup','Kesehatan Ibu & Anak','Penyakit Menular','Penyakit Tidak Menular','Kesehatan Lingkungan','Fasilitas & SDM Kesehatan','Jaminan Kesehatan']
     },
     pendidikan:{
         title:'PROFIL PENDIDIKAN KABUPATEN TASIKMALAYA',
@@ -31,7 +31,7 @@ const categoryData={
         value: '12,92 Tahun',
         datatahun: '2025',
         chart:'Tren Angka Partisipasi Sekolah (%)',
-        indicators:['Ringkasan','Pendidikan Dasar','Harapan Lama Sekolah','Rata-rata Lama Sekolah','Angka Partisipasi','Angka Putus Sekolah','Tenaga Pendidikan','Sarana Pendidikan']
+        indicators:['Harapan Lama Sekolah','Rata-rata Lama Sekolah','Pendidikan Dasar','Angka Partisipasi','Angka Putus Sekolah','Tenaga Pendidikan','Sarana Pendidikan']
     },
     kemiskinan:{
         title:'PROFIL KEMISKINAN KABUPATEN TASIKMALAYA',

@@ -77,10 +77,9 @@ $qindic = mysqli_query($conn, "SELECT * FROM ppm_indikator WHERE idkategori='$ge
 $indic = mysqli_num_rows($qindic);
 ?>
 
-<section class="hero">
+<section class="hero-mini">
     <div class="hero-mini-content">
-        <h1>SATU DATA BIDANG PPM BAPPELITBANGDA<br>KABUPATEN TASIKMALAYA</h1>
-        <p>Informasi terintegrasi untuk mendukung perencanaan dan evaluasi pembangunan daerah berbasis data yang akurat.</p>
+        <h1>Data <?=$getkat['kategori'] ?></h1>
     </div>
 </section>
 
