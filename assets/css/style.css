@@ -2,7 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: 'Manrope', sans-serif;
 }
 
 body {
@@ -180,8 +181,6 @@ body {
     z-index: 2;
     padding: 45px 23px;
 }
-
-/* @import url('https://googleapis.com'); */
 
 .hero-mini-content h1 {
     display: flex;

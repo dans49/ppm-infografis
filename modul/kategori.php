@@ -25,6 +25,9 @@
         padding: 13px 5px;
         font-size: 14px;
     }
+    .breadcrumb-item a {
+        text-decoration: none;
+    }
     .indicator-item {
         display: flex;
         align-items: center;
@@ -91,7 +94,7 @@ $indic = mysqli_num_rows($qindic);
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb small">
                 <li class="breadcrumb-item">
-                    <a href="index.html">Beranda</a>
+                    <a href="index.php">Beranda</a>
                 </li>
                 <li class="breadcrumb-item active"><?=$getkat['kategori'] ?></li>
             </ol>
@@ -130,7 +133,7 @@ $indic = mysqli_num_rows($qindic);
             
         <a href="detail-indikator.html" class="indicator-item">
             <div class="indicator-icon">
-                <i class="fa-solid fa-heart-pulse"></i>
+                <i class="fa-solid <?=$getkat['icon'] ?>"></i>
             </div>
             <div>
                 <div class="indicator-title"><?=$viewindic['nama_indikator'] ?></div>
