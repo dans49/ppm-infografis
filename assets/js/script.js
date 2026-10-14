@@ -42,7 +42,7 @@ const categoryData={
         value: '10,15%',
         datatahun: '2025',
         chart:'Tren Persentase Penduduk Miskin (%)',
-        indicators:['Ringkasan','Kemiskinan','Penduduk Miskin','P3KE','Bantuan Sosial','Kondisi Rumah Tangga','Ketenagakerjaan']
+        indicators:['Persentase Kemiskinan','Jumlah Penduduk Miskin','P3KE','Bantuan Sosial','Kondisi Rumah Tangga','Ketenagakerjaan']
     },
     stunting:{
         title:'PROFIL STUNTING KABUPATEN TASIKMALAYA',

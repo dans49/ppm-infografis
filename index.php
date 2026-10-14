@@ -115,8 +115,9 @@ include "config/koneksi.php";
             </div>
         </div>
     </section>
-    <?php } ?>
+    <?php }
 
+    if(empty($_GET['kategori'])){ ?>
     <section class="dashboard">
         <div class="dashboard-title">
             <h2 id="dashboard-title">PROFIL KESEHATAN KABUPATEN TASIKMALAYA</h2>
@@ -151,7 +152,7 @@ include "config/koneksi.php";
                     <li>Kesehatan Lingkungan</li>
                     <li>Fasilitas & SDM Kesehatan</li>
                     <li>Jaminan Kesehatan</li>
-</ul>
+                </ul>
                 <a href="" class="btn btn-primary"><span class="fa fa-download"></span> &nbsp; Unduh Data</a>
             </aside>
 
@@ -208,6 +209,10 @@ include "config/koneksi.php";
         </div>
 
     </section>
+    <?php } else if(!empty($_GET['kategori'])){
+        include "modul/kategori.php";
+    } ?>
+
     <!-- =========================
         FOOTER
     ========================= -->
