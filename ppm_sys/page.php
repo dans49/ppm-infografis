@@ -5,10 +5,8 @@ if(empty($_GET['page'])) {
 
 if($_GET['page'] == 'kecamatan') {
     include "modul/kecamatan/index.php";
-} elseif($_GET['page'] == 'puskesmas') {
-    include "modul/puskesmas/index.php";
-} elseif($_GET['page'] == 'edit_puskesmas') {
-    include "modul/puskesmas/edit.php";
+} elseif($_GET['page'] == 'indikator') {
+    include "modul/indikator/index.php";
 } elseif($_GET['page'] == 'user') {
     include "modul/user/index.php";
 } 
