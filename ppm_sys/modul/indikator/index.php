@@ -2,7 +2,7 @@
 <div class="card p-4">
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h5 class="fw-bold">Data Indikator</h5>
-        <a href="" class="btn btn-sm btn-primary">Tambah Data</a>
+        <a href="?page=tambah_indikator" class="btn btn-sm btn-primary">Tambah Data</a>
     </div>
 
     <?php
@@ -26,9 +26,9 @@
             <tbody>
                 <?php
                 $no = 1;
-                $datain = mysqli_query($conn,"SELECT * FROM ppm_dataindikator 
-                                                    INNER JOIN ppm_indikator ON ppm_indikator.id_indikator= ppm_dataindikator.id_indikator
-                                                    INNER JOIN ppm_kategori ON ppm_kategori.idkategori=ppm_indikator.idkategori");
+                $datain = mysqli_query($conn,"SELECT * FROM ppm_indikator 
+                                                    LEFT JOIN ppm_dataindikator ON ppm_indikator.id_indikator= ppm_dataindikator.id_indikator
+                                                    LEFT JOIN ppm_kategori ON ppm_kategori.idkategori=ppm_indikator.idkategori");
                 while($tampil = mysqli_fetch_array($datain)){
                 ?>
                 <tr>
@@ -37,7 +37,8 @@
                     <td><?=$tampil['nama_indikator'] ?></td>
                     <td><?=$tampil['tahun_data'] ?></td>
                     <td><?=$tampil['nilai'] ?> <?=$tampil['satuan'] ?></td>
-                    <td><a href="#" class="btn btn-sm btn-outline-warning"><i class="bi bi-pencil"></i></a> 
+                    <td><a href="?page=detail_indikator" class="btn btn-sm btn-outline-info"><i class="bi bi-list"></i></a> 
+                        <a href="#" class="btn btn-sm btn-outline-warning"><i class="bi bi-pencil"></i></a> 
                         <a href="#" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></a></td>
                 </tr>
                 <?php } ?>

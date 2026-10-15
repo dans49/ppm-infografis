@@ -9,6 +9,10 @@ if($_GET['page'] == 'kecamatan') {
     include "modul/kategori/index.php";
 } elseif($_GET['page'] == 'indikator') {
     include "modul/indikator/index.php";
+} elseif($_GET['page'] == 'tambah_indikator') {
+    include "modul/indikator/add.php";
+} elseif($_GET['page'] == 'detail_indikator') {
+    include "modul/indikator/add_detail.php";
 } elseif($_GET['page'] == 'user') {
     include "modul/user/index.php";
 } 
