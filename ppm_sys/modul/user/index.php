@@ -25,7 +25,7 @@
             <tbody>
                 <?php
                 $no = 1;
-                $datau = mysqli_query($conn, "SELECT * FROM gk_user");
+                $datau = mysqli_query($conn, "SELECT * FROM ppm_user");
                 while($tampil = mysqli_fetch_assoc($datau)){
                 ?>
                 <tr>
