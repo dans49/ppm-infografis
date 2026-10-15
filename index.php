@@ -154,7 +154,7 @@ include "config/koneksi.php";
                     <li>Penyakit Tidak Menular</li>
                     <li>Kesehatan Lingkungan</li>
                     <li>Fasilitas & SDM Kesehatan</li>
-                    <li>Jaminan Kesehatan</li>
+                    <!-- <li>Persentase Penduduk yang Memiliki Jaminan Kesehatan Menurut Jenis Jaminan - BPJS Kesehatan Penerima Bantuan Iuran (PBI)</li> -->
                 </ul>
                 <a href="" class="btn btn-primary"><span class="fa fa-download"></span> &nbsp; Unduh Data</a>
             </aside>
@@ -164,30 +164,6 @@ include "config/koneksi.php";
                 <div id="map"></div>
             </div>
 
-            <!-- <div class="info-column">
-                <div class="info-panel">
-                    <h3>INFORMASI WILAYAH TERPILIH</h3>
-                    <h3 id="region-name">Singaparna</h3>
-                    <div class="info-grid">
-                        <div class="info-item">
-                            <span>Penduduk</span>
-                            <strong id="population">29.602 jiwa</strong>
-                        </div>
-                        <div class="info-item">
-                            <span>Fasilitas</span>
-                            <strong id="facility">1 unit</strong>
-                        </div>
-                        <div class="info-item">
-                            <span>Indikator</span>
-                            <strong id="indicator-value">87,4%</strong>
-                        </div>
-                    </div>
-                    <div class="big-number" id="main-value">87,4%</div>
-                    <p style="font-size:11px;" id="main-label">Cakupan Imunisasi Lengkap</p>
-                    <p style="font-size:11px;margin:10px 0;">Status: <span class="status" id="status-value">Sedang</span></p>
-                    <button class="detail-btn" type="button">Lihat Detail Wilayah →</button>
-                </div>
-            </div> -->
             <div class="info-column">
                 <div class="info-panel">
                     <h3>INFORMASI</h3>

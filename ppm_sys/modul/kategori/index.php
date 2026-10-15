@@ -17,7 +17,8 @@
                 <tr>
                     <th>No.</th>
                     <th>Nama Kategori</th>
-                    <th>Satuan</th>
+                    <th>Slug</th>
+                    <th>Icon</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -30,9 +31,8 @@
                 <tr>
                     <td><?=$no++ ?></td>
                     <td><?=$tampil['kategori'] ?></td>
-                    <td><?=$tampil['satuan'] ?></td>
-                    <td><?=$tampil['tahun_data'] ?></td>
-                    <td><?=$tampil['nilai'] ?> <?=$tampil['satuan'] ?></td>
+                    <td><?=$tampil['slug'] ?></td>
+                    <td><span class="fa <?=$tampil['icon'] ?>"></span></td>
                     <td><a href="#" class="btn btn-sm btn-outline-warning"><i class="bi bi-pencil"></i></a> 
                         <a href="#" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></a></td>
                 </tr>

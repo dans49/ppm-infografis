@@ -5,6 +5,8 @@ if(empty($_GET['page'])) {
 
 if($_GET['page'] == 'kecamatan') {
     include "modul/kecamatan/index.php";
+} elseif($_GET['page'] == 'kategori') {
+    include "modul/kategori/index.php";
 } elseif($_GET['page'] == 'indikator') {
     include "modul/indikator/index.php";
 } elseif($_GET['page'] == 'user') {
