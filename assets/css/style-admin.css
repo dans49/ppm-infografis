@@ -1,0 +1,161 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+}
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+    background: #ffffff;
+    transition: all 0.3s;
+    border-right: 1px solid #dee2e6;
+}
+.sidebar-link {
+    padding: 10px 20px;
+    display: block;
+    color: #333;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.sidebar-link:hover, .sidebar-link.active {
+    background: #e9ecef;
+    color: #0d6efd;
+    border-radius: 5px;
+}
+.main-content {
+    width: 100%;
+    padding: 20px;
+}
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+.stats-icon {
+    font-size: 2rem;
+    opacity: 0.3;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+    /* Sidebar menggunakan gradasi vertikal */
+    background: linear-gradient(180deg, #1a69aa 0%, #a1ece6 100%);
+    transition: all 0.3s;
+    color: white;
+}
+
+/* Update warna link agar kontras dengan gradasi */
+.sidebar-link {
+    padding: 12px 20px;
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: 0.2s;
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+.sidebar-link:hover, .sidebar-link.active {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+.sidebar-header h4 {
+    color: white !important;
+}
+
+hr {
+    background-color: white;
+    opacity: 0.3;
+}
+
+.card-admin {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.custom-switch-card {
+    background: #f8f9fa;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.custom-switch-card:hover {
+    background: #e9ecef;
+    border-color: #0d6efd !important;
+}
+.form-label {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+.input-group-text {
+    background-color: #f8f9fa;
+}
+
+.toggle-card {
+    display: block;
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+/* Sembunyikan input asli tapi tetap fungsional di seluruh kotak */
+.toggle-card input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* Desain Switch Tunggal */
+.switch-custom {
+    width: 40px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 20px;
+    position: relative;
+    transition: 0.3s;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.switch-custom::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: 0.3s;
+}
+
+/* Warna saat AKTIF */
+.toggle-card input:checked ~ .card-content .switch-custom {
+    background-color: #0d6efd; /* Biru Branding */
+}
+
+.toggle-card input:checked ~ .card-content .switch-custom::after {
+    left: 22px;
+}
+
+/* Efek Hover Box */
+.toggle-card:hover {
+    border-color: #0d6efd;
+    background: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
