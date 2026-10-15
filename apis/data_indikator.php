@@ -50,10 +50,23 @@ while ($row = mysqli_fetch_assoc($query)) {
     if ($row['id_indikator'] === null) continue;
 
     $namaIndikator = $row['nama_indikator'];
+    
+    // if (!in_array($namaIndikator, $categoryData[$slug]['indicators'], true)) {
+    //     $categoryData[$slug]['indicators'][] = $namaIndikator;
+    // }
+    
+    $idIndikator = (int)$row['id_indikator'];
 
-    if (!in_array($namaIndikator, $categoryData[$slug]['indicators'], true)) {
-        $categoryData[$slug]['indicators'][] = $namaIndikator;
+    if (!isset($categoryData[$slug]['indicators'][$idIndikator])) {
+        $categoryData[$slug]['indicators'][$idIndikator] = [
+            'id' => $idIndikator,
+            'nama' => $row['nama_indikator'],
+            'nilai' => $row['nilai'],
+            'satuan' => $row['satuan'] ?? '',
+            'tahun' => $row['tahun_data']
+        ];
     }
+
 
     // Contoh awal: gunakan data terbaru dari indikator pertama.
     if ($categoryData[$slug]['indikator'] === '-') {
@@ -66,6 +79,12 @@ while ($row = mysqli_fetch_assoc($query)) {
             $categoryData[$slug]['datatahun'] = $row['tahun_data'];
         }
     }
+    
+    foreach ($categoryData as &$kategori) {
+        $kategori['indicators'] = array_values($kategori['indicators']);
+    }
+    unset($kategori);
 }
+
 
 echo json_encode($categoryData);

@@ -26,18 +26,60 @@ async function loadDataIndikator() {
     }
 }
 
-function updateDataIndikator(page){
-    const data=categoryData[page];
-    if(!data)return;
-    dashboardTitle.textContent=data.title;
-    sidebarHeader.innerHTML=data.sidebar;
-    mapTitle.textContent=data.map;
-    levelwil.textContent=data.levelwil;
-    indikator.textContent=data.indikator;
-    mainValue.textContent=data.value;
-    dataTahun.textContent=data.datatahun;
-    sidebarList.innerHTML=data.indicators.map((item,index)=>`<li class="${index===0?'active':''}">${item}</li>`).join('');
-    bindSidebar();
+let activeCategory = 'kesehatan';
+
+function updateDataIndikator(page) {
+    const data = categoryData[page];
+    if (!data) return;
+
+    activeCategory = page;
+
+    dashboardTitle.textContent = data.title;
+    sidebarHeader.textContent = data.sidebar;
+    mapTitle.textContent = data.map;
+    levelwil.textContent = data.levelwil;
+
+    sidebarList.innerHTML = '';
+
+    data.indicators.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.textContent = item.nama;
+
+        if (index === 0) li.classList.add('active');
+
+        li.addEventListener('click', () => {
+            document.querySelectorAll('#sidebar-list li').forEach(el => {
+                el.classList.remove('active');
+            });
+
+            li.classList.add('active');
+            tampilkanIndikator(item);
+        });
+
+        sidebarList.appendChild(li);
+    });
+
+    if (data.indicators.length > 0) {
+        tampilkanIndikator(data.indicators[0]);
+    } else {
+        indikator.textContent = '-';
+        mainValue.textContent = '-';
+        dataTahun.textContent = '-';
+    }
+}
+
+function tampilkanIndikator(item) {
+    indikator.textContent = item.nama;
+
+    mainValue.textContent = item.nilai === null || item.nilai === ''
+        ? '-'
+        : `${item.nilai} ${item.satuan || ''}`.trim();
+
+    dataTahun.textContent = item.tahun ?? '-';
+
+    if (mainLabel) {
+        mainLabel.textContent = item.nama;
+    }
 }
 
 function bindSidebar(){
@@ -59,8 +101,6 @@ categoryCards.forEach(card=>{
         document.querySelector('.dashboard').scrollIntoView({behavior:'smooth',block:'start'});
     });
 });
-
-bindSidebar();
 
 document.querySelectorAll('.dropdown-toggle').forEach(button=>{
     button.addEventListener('click',e=>{
