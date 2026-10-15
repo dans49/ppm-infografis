@@ -26,18 +26,18 @@
             <tbody>
                 <?php
                 $no = 1;
-                $datain = mysqli_query($conn,"SELECT * FROM ppm_indikator 
-                                                    LEFT JOIN ppm_dataindikator ON ppm_indikator.id_indikator= ppm_dataindikator.id_indikator
-                                                    LEFT JOIN ppm_kategori ON ppm_kategori.idkategori=ppm_indikator.idkategori");
+                $datain = mysqli_query($conn,"SELECT * FROM ppm_indikator a
+                                                    LEFT JOIN ppm_kategori c ON c.idkategori=a.idkategori");
                 while($tampil = mysqli_fetch_array($datain)){
+                    $vdataindikator = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM ppm_dataindikator WHERE id_indikator='$tampil[id_indikator]'"));
                 ?>
                 <tr>
                     <td><?=$no++ ?></td>
                     <td><?=$tampil['kategori'] ?></td>
                     <td><?=$tampil['nama_indikator'] ?></td>
-                    <td><?=$tampil['tahun_data'] ?></td>
-                    <td><?=$tampil['nilai'] ?> <?=$tampil['satuan'] ?></td>
-                    <td><a href="?page=detail_indikator" class="btn btn-sm btn-outline-info"><i class="bi bi-list"></i></a> 
+                    <td><?=$vdataindikator['tahun_data'] ?></td>
+                    <td><?=$vdataindikator['nilai'] ?> <?=$tampil['satuan'] ?></td>
+                    <td><a href="?page=detail_indikator&indikator=<?=$tampil['id_indikator'] ?>" class="btn btn-sm btn-outline-info"><i class="bi bi-list"></i></a> 
                         <a href="#" class="btn btn-sm btn-outline-warning"><i class="bi bi-pencil"></i></a> 
                         <a href="#" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></a></td>
                 </tr>
